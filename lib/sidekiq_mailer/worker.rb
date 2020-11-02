@@ -4,6 +4,6 @@ class Sidekiq::Mailer::Worker
   def perform(mailer_class, action, params)
     byebug
     1
-    #mailer_class.constantize.send(action, *params).deliver!
+    mailer_class.constantize.send(action, *params).deliver!
   end
 end
